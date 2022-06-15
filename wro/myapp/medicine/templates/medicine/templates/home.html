@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine management</title>
+</head>
+<body>
+    <div id="medicine">
+        <p>Select medicine to create prescription:</p>
+        <div class="mbtn">
+            <button id="1">Paracetamol</button>
+            <p id="pill1Num">0</p>
+        </div>
+        
+        <div class="mbtn">
+            <button id="2">Efferalgant</button>
+            <p id="pill2Num">0</p>
+        </div>
+        <div class="mbtn">
+            <button id="3">Tylenol</button>
+            <p id="pill3Num">0</p>
+        </div>
+    </div>
+    
+    <div id="patient">
+        <p>Select patient number:</p>
+        <button class="patient" id="p1">Patient number 1</button>
+        <button class="patient" id="p2">Patient number 2</button>
+        <button class="patient" id="p3">Patient number 3</button>
+    </div>
+    <p id="displayPatient">Choosing Patient...</p>
+    
+    
+    <button id="submitBtn" type="submit">Render prescription</button>
+    <div id="result">
+        <p id="result_patient"></p>
+        <ul>
+            <li style="display: flex;">
+                <p>Paracetamol:</p>
+                <p id="result_amount1" style="margin-left: 10px;"></p>
+            </li>
+            <li style="display: flex;">
+                <p>Efferalgant:</p>
+                <p id="result_amount2"style="margin-left: 10px;"></p>
+            </li>
+            <li style="display: flex;">
+                <p>Tylenol;</p>
+                <p id="result_amount3"style="margin-left: 10px;"></p>
+            </li>
+        </ul>
+        <p>Check your prescription again!</p>
+        <button id="delivery">Delivery medicine</button>
+        <button id="reload">New</button>
+    </div>
+
+    <style>
+        #submitBtn{
+            margin-top: 20px;
+        }
+
+        #result {
+            display: none;
+        }
+       
+
+        .mbtn {
+            display: flex;
+            padding-top: 15px;
+        }
+        .mbtn p {
+            margin-left: 15px;
+        }
+
+        
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script type="module">
+        var pill1 = document.getElementById("1")
+        var pill2 = document.getElementById("2")
+        var pill3 = document.getElementById("3")
+        var patient1 = document.getElementById("p1")
+        var patient2 = document.getElementById("p2")
+        var patient3 = document.getElementById("p3")
+        var btn1 = document.getElementById("pill1Num")
+        var btn2 = document.getElementById("pill2Num")
+        var btn3 = document.getElementById("pill3Num")
+        var render = document.getElementById("submitBtn")
+        pill1.addEventListener("click", incremented1)
+        pill2.addEventListener("click", incremented2)
+        pill3.addEventListener("click", incremented3)
+        function incremented1(){
+            btn1.innerHTML ++
+        }
+        function incremented2(){
+            btn2.innerHTML ++
+        }
+        function incremented3(){
+            btn3.innerHTML ++
+        }
+        function selectingPatient(){
+            let p = document.getElementById("p1").innerHTML;
+            document.getElementById("displayPatient").style.display = "block";
+            document.getElementById("displayPatient").innerHTML = p;
+        }
+        function selectingPatient2(){
+            let p = document.getElementById("p2").innerHTML;
+            document.getElementById("displayPatient").style.display = "block";
+            document.getElementById("displayPatient").innerHTML = p;
+        }
+        function selectingPatient3(){
+            let p = document.getElementById("p3").innerHTML;
+            document.getElementById("displayPatient").style.display = "block";
+            document.getElementById("displayPatient").innerHTML = p;
+        }
+        patient1.addEventListener("click", selectingPatient)
+        patient2.addEventListener("click", selectingPatient2)
+        patient3.addEventListener("click", selectingPatient3)
+        
+        render.addEventListener("click", displayPre)
+        function displayPre(){
+            document.getElementById("result_patient").innerHTML = document.getElementById("displayPatient").innerHTML
+            document.getElementById("result_amount1").innerHTML = btn1.innerHTML
+            document.getElementById("result_amount2").innerHTML = btn2.innerHTML
+            document.getElementById("result_amount3").innerHTML = btn3.innerHTML
+            document.getElementById("result").style.display = "block"
+
+        }
+        var btnDe =  document.getElementById("delivery")
+        
+        btnDe.addEventListener("click", creatingJSON)
+        'use strict';
+        // let jsonFile = require('jsonfile');        
+        function creatingJSON() {
+            
+            
+
+            var dict = {
+                "patient_number": document.getElementById("displayPatient").innerHTML,
+                "medicine": ["Paracetamol", "Efferalgant", "Tylenol"],
+                "amount":[btn1.innerHTML, btn2.innerHTML, btn3.innerHTML]
+            }
+            var dictstring = JSON.stringify(dict);
+            console.log(dictstring)
+            // jsonFile.writeFile("data.json", dictstring);
+            $.ajax({
+                url:"/test",
+                type:"POST",
+                contentType: "application/json",
+                data: JSON.stringify(dictstring)}
+                );
+
+            
+    
+        }
+        
+
+        let reloadbtn = document.getElementById("reload")
+        reloadbtn.addEventListener("click", fucnReload)
+        function fucnReload(){
+            location.reload()
+        }
+        
+
+
+
+    </script>
+</body>
+</html>

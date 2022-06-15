@@ -1,0 +1,329 @@
+{
+    "prescription": [
+        {
+            "patient_number": "Patient number 1",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "1",
+                "1",
+                "1"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "1",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "4",
+                "3",
+                "5"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "4",
+                "5"
+            ]
+        },
+        {
+            "patient_number": "Choosing Patient...",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "0",
+                "0",
+                "0"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "patient_number": "Patient number 1",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "5",
+                "2",
+                "5"
+            ]
+        },
+        {
+            "patient_number": "Patient number 1",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "5",
+                "2",
+                "5"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "4"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "5"
+            ]
+        },
+        {
+            "patient_number": "Patient number 1",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "2",
+                "3"
+            ]
+        },
+        {
+            "patient_number": "Patient number 1",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "3",
+                "3",
+                "3"
+            ]
+        },
+        {
+            "patient_number": "Patient number 1",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "2",
+                "2"
+            ]
+        },
+        {
+            "patient_number": "Patient number 2",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "3"
+            ]
+        },
+        {
+            "patient_number": "Patient number 3",
+            "medicine": [
+                "Paracetamol",
+                "Efferalgant",
+                "Tylenol"
+            ],
+            "amount": [
+                "2",
+                "3",
+                "6"
+            ]
+        }
+    ]
+}
