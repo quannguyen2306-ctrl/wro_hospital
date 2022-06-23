@@ -7,57 +7,67 @@
     <title>Medicine management</title>
 </head>
 <body>
-    <div id="medicine">
-        <p>Select medicine to create prescription:</p>
-        <div class="mbtn">
-            <button id="1">Paracetamol</button>
-            <p id="pill1Num">0</p>
+    <div class="container">
+        <div class="name">
+            <h3>Doctor name:</h3>
+            <input id="doctor_name" type="text">
         </div>
         
-        <div class="mbtn">
-            <button id="2">Efferalgant</button>
-            <p id="pill2Num">0</p>
+        <div id="medicine">
+            <p>Select medicine to create prescription:</p>
+            <div class="mbtn">
+                <button id="1">Paracetamol</button>
+                <p id="pill1Num">0</p>
+            </div>
+            
+            <div class="mbtn">
+                <button id="2">Efferalgant</button>
+                <p id="pill2Num">0</p>
+            </div>
+            <div class="mbtn">
+                <button id="3">Tylenol</button>
+                <p id="pill3Num">0</p>
+            </div>
         </div>
-        <div class="mbtn">
-            <button id="3">Tylenol</button>
-            <p id="pill3Num">0</p>
+        
+        <div id="patient">
+            <p>Select patient number:</p>
+            <button class="patient" id="p1">Patient number 1</button>
+            <button class="patient" id="p2">Patient number 2</button>
+            <button class="patient" id="p3">Patient number 3</button>
+            <p id="displayPatient">Choosing Patient...</p>
+        </div>
+        
+        
+        
+        <button id="submitBtn" type="submit">Render prescription</button>
+        <div id="result">
+            <p id="result_patient"></p>
+            <ul>
+                <li style="display: flex;">
+                    <p>Paracetamol:</p>
+                    <p id="result_amount1" style="margin-left: 10px;"></p>
+                </li>
+                <li style="display: flex;">
+                    <p>Efferalgant:</p>
+                    <p id="result_amount2"style="margin-left: 10px;"></p>
+                </li>
+                <li style="display: flex;">
+                    <p>Tylenol;</p>
+                    <p id="result_amount3"style="margin-left: 10px;"></p>
+                </li>
+            </ul>
+            <p>Check your prescription again!</p>
+            <button id="delivery">Delivery medicine</button>
+            <button id="reload">New</button>
         </div>
     </div>
     
-    <div id="patient">
-        <p>Select patient number:</p>
-        <button class="patient" id="p1">Patient number 1</button>
-        <button class="patient" id="p2">Patient number 2</button>
-        <button class="patient" id="p3">Patient number 3</button>
-    </div>
-    <p id="displayPatient">Choosing Patient...</p>
-    
-    
-    <button id="submitBtn" type="submit">Render prescription</button>
-    <div id="result">
-        <p id="result_patient"></p>
-        <ul>
-            <li style="display: flex;">
-                <p>Paracetamol:</p>
-                <p id="result_amount1" style="margin-left: 10px;"></p>
-            </li>
-            <li style="display: flex;">
-                <p>Efferalgant:</p>
-                <p id="result_amount2"style="margin-left: 10px;"></p>
-            </li>
-            <li style="display: flex;">
-                <p>Tylenol;</p>
-                <p id="result_amount3"style="margin-left: 10px;"></p>
-            </li>
-        </ul>
-        <p>Check your prescription again!</p>
-        <button id="delivery">Delivery medicine</button>
-        <button id="reload">New</button>
-    </div>
 
     <style>
         #submitBtn{
             margin-top: 20px;
+            height: 20px;
         }
 
         #result {
@@ -71,6 +81,10 @@
         }
         .mbtn p {
             margin-left: 15px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-evenly;
         }
 
         
@@ -87,6 +101,8 @@
         var btn2 = document.getElementById("pill2Num")
         var btn3 = document.getElementById("pill3Num")
         var render = document.getElementById("submitBtn")
+        var doctor_name = document.getElementById("doctor_name")
+
         pill1.addEventListener("click", incremented1)
         pill2.addEventListener("click", incremented2)
         pill3.addEventListener("click", incremented3)
@@ -133,10 +149,8 @@
         'use strict';
         // let jsonFile = require('jsonfile');        
         function creatingJSON() {
-            
-            
-
             var dict = {
+                "doctor_name": doctor_name.value,
                 "patient_number": document.getElementById("displayPatient").innerHTML,
                 "medicine": ["Paracetamol", "Efferalgant", "Tylenol"],
                 "amount":[btn1.innerHTML, btn2.innerHTML, btn3.innerHTML]
@@ -145,16 +159,12 @@
             console.log(dictstring)
             // jsonFile.writeFile("data.json", dictstring);
             $.ajax({
-                url:"/test",
+                url:"/input_prescription",
                 type:"POST",
                 contentType: "application/json",
                 data: JSON.stringify(dictstring)}
                 );
-
-            
-    
         }
-        
 
         let reloadbtn = document.getElementById("reload")
         reloadbtn.addEventListener("click", fucnReload)
